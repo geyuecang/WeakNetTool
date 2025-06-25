@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tools_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ToolsActivity">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网络工具"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 代理设置区域 -->
+        <TextView
+            android:id="@+id/proxy_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="代理设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/setup_proxy_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置系统代理"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/proxy_title" />
+
+        <TextView
+            android:id="@+id/proxy_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="代理状态: 未运行"
+            android:textSize="14sp"
+            android:textColor="#F44336"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/setup_proxy_button" />
+
+        <!-- 弱网设置区域 -->
+        <TextView
+            android:id="@+id/weak_network_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弱网设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/proxy_status_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/network_level_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/weak_network_title">
+
+            <RadioButton
+                android:id="@+id/normal_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="正常网络 (100Mbps下载 / 50Mbps上传 / 20ms延迟)"
+                android:checked="true"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/fast_4g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="快速4G (50Mbps下载 / 25Mbps上传 / 50ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/normal_4g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="标准4G (20Mbps下载 / 10Mbps上传 / 100ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/slow_4g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="慢速4G (5Mbps下载 / 2Mbps上传 / 200ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/fast_3g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="快速3G (2Mbps下载 / 1Mbps上传 / 300ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/normal_3g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="标准3G (1Mbps下载 / 0.5Mbps上传 / 500ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/slow_3g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="慢速3G (0.5Mbps下载 / 0.2Mbps上传 / 800ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/fast_2g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="快速2G (0.2Mbps下载 / 0.1Mbps上传 / 1000ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/normal_2g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="标准2G (0.1Mbps下载 / 0.05Mbps上传 / 1500ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/slow_2g_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="慢速2G (0.05Mbps下载 / 0.02Mbps上传 / 2000ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/gprs_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GPRS网络 (0.02Mbps下载 / 0.01Mbps上传 / 3000ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/very_slow_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="极慢网络 (0.01Mbps下载 / 0.005Mbps上传 / 5000ms延迟)"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/offline_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="离线模式 (无网络连接)"
+                android:padding="8dp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/network_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择网络等级以模拟不同的网络环境"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/network_level_group" />
+
+        <Button
+            android:id="@+id/apply_network_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="应用网络设置"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/network_description_text" />
+
+        <!-- 网速显示区域 -->
+        <TextView
+            android:id="@+id/speed_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前网速"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/apply_network_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/speed_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/speed_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/download_speed_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="下载速度: 0 Mbps"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/upload_speed_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="上传速度: 0 Mbps"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/ping_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="延迟: 0 ms"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/start_speed_test_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始网速测试"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/speed_card" />
+
+        <Button
+            android:id="@+id/stop_speed_test_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="停止网速测试"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:enabled="false"
+            app:layout_constraintTop_toBottomOf="@id/start_speed_test_button" />
+
+        <!-- 网络状态显示 -->
+        <TextView
+            android:id="@+id/network_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络状态: 正常"
+            android:textSize="14sp"
+            android:textColor="#4CAF50"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/stop_speed_test_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView> 
